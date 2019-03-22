@@ -1,0 +1,13 @@
+body{
+    background: url(../images/movie-theater-wallpaper-7.jpg);
+    background-size: 1300px;
+    color: white;
+}
+
+#trivia-box {
+    background-color: antiquewhite;
+    height: 500px;
+    color: red;
+    text-align: center;
+    margin-top: 100px;
+}
