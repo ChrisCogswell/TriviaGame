@@ -4,10 +4,20 @@ body{
     color: white;
 }
 
+#title {
+    text-align: center;
+    font-family: 'Righteous', cursive;
+}
+
 #trivia-box {
     background-color: antiquewhite;
     height: 500px;
     color: red;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 75px;
+}
+
+#timer {
+    color: blue;
+    margin-left: 350px;
 }

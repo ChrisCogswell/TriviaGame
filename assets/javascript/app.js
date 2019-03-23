@@ -1,3 +1,35 @@
+$(document).ready(function(){
+
+var questions = [{
+    question: "Which one of these is NOT a Star Wars character?",
+    answers: ["Darth Vader", "Spock", "Luke Skywalker", "Yoda"], 
+    correctAnswer: "Spock",
+    image: "./images/spock.gif"
+},
+{   question: "Who played The Joker in Tim Burton's 'Batman'?",
+    answers: ["Jack Palance", "Jared Leto", "Harvey Keitel", "Jack Nicholson"],
+    correctAnswer: "Jack Nicholson",
+    image: "./images/joker.gif"
+}, 
+{   question: "Which of these films was NOT directed by Quentin Tarantino?",
+    answers: ["Pulp Fiction", "Kill Bill", "Goodfellas", "Resevoir Dogs"],
+    correctAnswer: "Goodfellas",
+    image: "./images/goodfellas.gif"
+},
+{   question: "In 'Back to the Future', how much electricity is needed to power the time machine?",
+    answers: ["1.21 gigawatts", "121 megawatts", "21 terawatts", "1,021 watts"],
+    correctAnswer: "1.21 gigawatts",
+    image: "./images/gigawatt.gif"
+},
+{   question: "T. E. Lawrence is the main character in the 1963 Oscar winner 'Lawrence of (what)?'",
+    answers: ["Australia", "Bulgaria", "Arabia", "America"],
+    correctAnswer: "Arabia",
+    image: "./images/arabia.gif"
+
+}];
+
+
+
 
 var number = 100;
 
@@ -10,10 +42,14 @@ function run(){
 
 function decrement(){
     number--;
-    $("#empty-div").html("<h1>" + number + "</h1>");
+    $("#quiz").html(number);
 }
 
-run();
+$("#start").on("click", function(){
+
+});
+});
+
 
 
 
