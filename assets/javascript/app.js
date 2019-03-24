@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
 var questions = [{
     question: "Which one of these is NOT a Star Wars character?",
@@ -28,30 +28,67 @@ var questions = [{
 
 }];
 
+// var questionHTML = [];
 
+// var answerHTML1 = [];
 
+// var answerHTML2 = [];
 
-var number = 100;
+var number = 20;
 
 var intervalId;
 
 function run(){
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000);
+    gameStart();
 }
 
 function decrement(){
     number--;
-    $("#quiz").html(number);
+    if (number === 0){
+        number = 20;
+    }
+    $("#timer").html(number);
 }
 
+function gameStart() {
+    var firstQuestion = questions[0].question;
+    $("#questionText").html(firstQuestion);
+    userCoice();
+  };
+
+  function userCoice() {
+    var userChoices = questions[0].answers[0];
+    $("#choiceText").html("1: " + userChoices);
+  };
+// function gameStart(){
+
+//     questionHTML.push(questions[0].question);
+
+//     answerHTML1.push("1: " + questions[0].answers[0]);
+//     answerHTML2.push("2: " + questions[0].answers[1]);
+ 
+ 
+// $("#questionText").html(questionHTML.join(""));
+// $("#firstChoice").html(answerHTML1.join(""));
+// $("#secondChoice").html(answerHTML2.join(""));
+
+// };
+
 $("#start").on("click", function(){
-
+$("#start").hide();
+run();
 });
 });
 
 
 
+// var array = [...];
+// var newHTML = [];
+// $.each(array, function(index, value) {
+//     newHTML.push('<span>' + value + '</span>');
+// });
 
 
 
@@ -59,6 +96,12 @@ $("#start").on("click", function(){
 
 
 
+// var array = [...];
+// var newHTML = [];
+// for (var i = 0; i < array.length; i++) {
+//     newHTML.push('<span>' + array[i] + '</span>');
+// }
+// $(".element").html(newHTML.join(""));
 
 
 
