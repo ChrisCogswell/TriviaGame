@@ -53,33 +53,28 @@ function decrement(){
 }
 
 function gameStart() {
-    var firstQuestion = questions[0].question;
-    $("#questionText").html(firstQuestion);
-    userCoice();
+    var randomQuestion = questions[Math.floor(Math.random()*5)];
+    $("#questionText").html(randomQuestion["question"]);
+    $("#choiceText").html(randomQuestion["answers[0]"]);
+    // userCoice();
   };
 
   function userCoice() {
-    var userChoices = questions[0].answers[0];
-    $("#choiceText").html("1: " + userChoices);
+    //   for (var i = 0; i < 3; i++){}
+    var userChoices1 = questions[0].answers[0];
+    var userChoices2 = questions[0].answers[1];
+    var userChoices3 = questions[0].answers[2];
+    var userChoices4 = questions[0].answers[3];
+    $("#firstChoice").html("1: " + userChoices1);
+    $("#secondChoice").html("2: " + userChoices2);
+    $("#thirdChoice").html("3: " + userChoices3);
+    $("#fourthChoice").html("4: " + userChoices4);
   };
-// function gameStart(){
-
-//     questionHTML.push(questions[0].question);
-
-//     answerHTML1.push("1: " + questions[0].answers[0]);
-//     answerHTML2.push("2: " + questions[0].answers[1]);
- 
- 
-// $("#questionText").html(questionHTML.join(""));
-// $("#firstChoice").html(answerHTML1.join(""));
-// $("#secondChoice").html(answerHTML2.join(""));
-
-// };
-
-$("#start").on("click", function(){
-$("#start").hide();
-run();
-});
+  
+  $("#start").on("click", function(){
+      $("#start").hide();
+      run();
+    });
 });
 
 
@@ -87,15 +82,28 @@ run();
 // var array = [...];
 // var newHTML = [];
 // $.each(array, function(index, value) {
-//     newHTML.push('<span>' + value + '</span>');
-// });
-
-
-
-
-
-
-
+    //     newHTML.push('<span>' + value + '</span>');
+    // });
+    
+    
+    
+    
+    // function gameStart(){
+    
+    //     questionHTML.push(questions[0].question);
+    
+    //     answerHTML1.push("1: " + questions[0].answers[0]);
+    //     answerHTML2.push("2: " + questions[0].answers[1]);
+     
+     
+    // $("#questionText").html(questionHTML.join(""));
+    // $("#firstChoice").html(answerHTML1.join(""));
+    // $("#secondChoice").html(answerHTML2.join(""));
+    
+    // };
+    
+    
+    
 // var array = [...];
 // var newHTML = [];
 // for (var i = 0; i < array.length; i++) {
