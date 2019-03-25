@@ -55,11 +55,22 @@ $(document).ready(function() {
         },
         correctAnswer: "c",
         image: "./images/arabia.gif"
+    },
+    {
+        question: "Neo, Morpheus, and Trinity are all characters from which film?",
+        answers: {
+            a: "Inception",
+            b: "The Matrix",
+            c: "Blade Runner",
+            d: "Ex Machina"
+        },
+        correctAnswer: "b",
+        image: "./images/Neo.gif"
     }
     ];
     
     
-    var number = 20;
+    var number = 60;
     
     var intervalId;
     
@@ -74,7 +85,7 @@ $(document).ready(function() {
         if (number === 0){
             number = 20;
         }
-        $("#timer").html(number);
+        $("#timer").html("Time Remaining: " + number);
     }
     
     function quizMain() {
@@ -99,21 +110,35 @@ $(document).ready(function() {
            output.push(
             `<div class="slide">
                <div class="question"> ${currentQuestion.question} </div>
-               <div class="answers"> ${answers.join("")} </div>
+               <div class="answers"> ${answers.join("  ")} </div>
              </div>`
            );
            });
 
            quizContainer.innerHTML = output.join("");
        }
-       var quizContainer = document.getElementById("quiz");
+       
+       function quizResults() {
+
+        var numberCorrect = 0;
+
+
+
+       }
+
+
+       var quizContainer = $("#quiz")[0];
+       
     
-    
-    
-    
+    //   This section hides my submit button 
+       
+      $("#submit").hide();
       
+    //   This section starts my game and shows submit button
+
       $("#start").on("click", function(){
           $("#start").hide();
+          $("#submit").show();
           run();
         });
     });

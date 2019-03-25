@@ -9,14 +9,27 @@ body{
     font-family: 'Righteous', cursive;
 }
 
+#logo {
+    width: 35px;
+    height: 35px;
+}
+
 #trivia-box {
     background-color: antiquewhite;
     height: 500px;
     color: red;
     text-align: center;
-    margin-top: 75px;
+    margin-top: 65px;
+}
+
+.question {
+    margin-top: 10px;
+    font-size: 20px;
 }
 
 #timer {
     color: brown;
+}
+#start {
+    margin-top: 50px;
 }
