@@ -21,7 +21,7 @@ $(document).ready(function() {
             d: "Jack Nicholson"
         },
         correctAnswer: "d",
-        image: "./images/joker.gif"
+        image: "./assets/images/joker.gif"
     }, 
     {  
         question: "Which of these films was NOT directed by Quentin Tarantino?",
@@ -32,7 +32,7 @@ $(document).ready(function() {
             d: "Resevoir Dogs"
         },
         correctAnswer: "c",
-        image: "./images/goodfellas.gif"
+        image: "./assets/images/goodfellas.gif"
     },
     {  
         question: "In 'Back to the Future', how much electricity is needed to power the time machine?",
@@ -42,19 +42,19 @@ $(document).ready(function() {
             c: "21 terawatts",
             d: "1,021 watts"
         },
-        correctAnswer: "1.21 gigawatts",
-        image: "./images/gigawatt.gif"
+        correctAnswer: "a",
+        image: "./assets/images/gigawatt.gif"
     },
     {   
         question: "T. E. Lawrence is the main character in the 1963 Oscar winner 'Lawrence of (what)?'",
         answers: {
             a: "Australia",
-            b: "Bulgaria",
+            b: "Aruba",
             c: "Arabia",
             d: "America"
         },
         correctAnswer: "c",
-        image: "./images/arabia.gif"
+        image: "./assets/images/arabia.gif"
     },
     {
         question: "Neo, Morpheus, and Trinity are all characters from which film?",
@@ -65,7 +65,7 @@ $(document).ready(function() {
             d: "Ex Machina"
         },
         correctAnswer: "b",
-        image: "./images/Neo.gif"
+        image: "./assets/images/Neo.gif"
     }
     ];
     
@@ -87,17 +87,21 @@ $(document).ready(function() {
         }
         $("#timer").html("Time Remaining: " + number);
     }
-    
+    // This function displays my questions and choices
+
     function quizMain() {
         var output = [];
 
        
-        myTrivia.forEach((currentQuestion, questionNumber) => {
+        myTrivia.forEach(function(currentQuestion, questionNumber) {
+            // myQuestions.forEach((currentQuestion, questionNumber) => {
          
           var answers = [];
     
           for (letter in currentQuestion.answers) {
-           
+
+        //    This code gives my answers radio type buttons
+
             answers.push(
               `<label>
                  <input type="radio" name="question${questionNumber}" value="${letter}">
@@ -120,20 +124,41 @@ $(document).ready(function() {
        
        function quizResults() {
 
+        var answerChoices = quizContainer.querySelectorAll(".answers");
+
         var numberCorrect = 0;
 
+        myTrivia.forEach(function(currentQuestion, questionNumber) {
+            var answerSelect = answerChoices[questionNumber];
+            var selector = `input[name=question${questionNumber}]:checked`;
+            var userChoice = (answerSelect.querySelector(selector) || {}).value;
 
+            if (userChoice === currentQuestion.correctAnswer) {
+                numberCorrect++;
+            }
+        });
+
+        $("#results").append("You Answered: " + numberCorrect + " out of " + myTrivia.length + " correctly");
+        $("#image").append("<img src='./assets/images/goodfellas.gif'>");
 
        }
 
 
        var quizContainer = $("#quiz")[0];
        
+
+       $("#submit").on("click", function(){
+           $("#quiz").hide();
+           $("#timer").hide();
+           $("#submit").hide();
+           $("#results").show();
+           quizResults();
+       })
     
     //   This section hides my submit button 
        
       $("#submit").hide();
-      
+      $("#results").hide();
     //   This section starts my game and shows submit button
 
       $("#start").on("click", function(){

@@ -16,6 +16,9 @@ body{
 
 #trivia-box {
     background-color: antiquewhite;
+    border-style: solid;
+    border-width: 5px;
+    border-color: goldenrod;
     height: 500px;
     color: red;
     text-align: center;
@@ -31,5 +34,12 @@ body{
     color: brown;
 }
 #start {
-    margin-top: 50px;
+    margin-top: 100px;
+    font-family: 'Righteous', cursive;
+    font-size: 40px;
+}
+
+#results {
+    font-size: 40px;
+    font-family: 'Righteous', cursive;
 }
