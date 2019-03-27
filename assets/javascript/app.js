@@ -85,7 +85,7 @@ $(document).ready(function() {
         if (number === 0){
             number = 20;
         }
-        $("#timer").html("Time Remaining: " + number);
+        $(".timer").html("Beat The Clock: " + number);
     }
     // This function displays my questions and choices
 
@@ -137,9 +137,17 @@ $(document).ready(function() {
                 numberCorrect++;
             }
         });
+            if (numberCorrect <= 1 ){
+              $("#image").append("<img src='./assets/images/goodfellas.gif'>");
+            }
+            if (2 <= numberCorrect && numberCorrect <= 5){
+              $("#image").append("<img src='./assets/images/close.gif'>");  
+            }
+            if (numberCorrect === 6){
+              $("#image").append("<img src='./assets/images/axel.gif'>"); 
+            }
 
         $("#results").append("You Answered: " + numberCorrect + " out of " + myTrivia.length + " correctly");
-        $("#image").append("<img src='./assets/images/goodfellas.gif'>");
 
        }
 
@@ -149,7 +157,7 @@ $(document).ready(function() {
 
        $("#submit").on("click", function(){
            $("#quiz").hide();
-           $("#timer").hide();
+           $(".timer").hide();
            $("#submit").hide();
            $("#results").show();
            quizResults();
@@ -164,6 +172,7 @@ $(document).ready(function() {
       $("#start").on("click", function(){
           $("#start").hide();
           $("#submit").show();
+          $("#startImg").hide();
           run();
         });
     });
