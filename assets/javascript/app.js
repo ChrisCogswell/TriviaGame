@@ -69,7 +69,8 @@ $(document).ready(function() {
     }
     ];
     
-    
+    // This code runs my quiz and timer
+
     var number = 60;
     
     var intervalId;
@@ -98,7 +99,6 @@ $(document).ready(function() {
 
        
         myTrivia.forEach(function(currentQuestion, questionNumber) {
-            // myQuestions.forEach((currentQuestion, questionNumber) => {
          
           var answers = [];
     
@@ -126,6 +126,8 @@ $(document).ready(function() {
            quizContainer.innerHTML = output.join("");
        }
        
+    //    This function determines correct answers and responds accordingly
+
        function quizResults() {
 
         var answerChoices = quizContainer.querySelectorAll(".answers");
@@ -158,6 +160,7 @@ $(document).ready(function() {
 
        var quizContainer = $("#quiz")[0];
        
+    // This is my submit button
 
        $("#submit").on("click", function(){
            $("#quiz").hide();
@@ -167,10 +170,11 @@ $(document).ready(function() {
            quizResults();
        })
     
-    //   This section hides my submit button 
+    //   This section hides my submit button  and results
        
       $("#submit").hide();
       $("#results").hide();
+
     //   This section starts my game and shows submit button
 
       $("#start").on("click", function(){
