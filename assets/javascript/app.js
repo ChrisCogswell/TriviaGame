@@ -70,7 +70,7 @@ $(document).ready(function() {
     ];
     
     
-    var number = 60;
+    var number = 10;
     
     var intervalId;
     
@@ -83,7 +83,11 @@ $(document).ready(function() {
     function decrement(){
         number--;
         if (number === 0){
-            number = 20;
+            $("#quiz").hide();
+            $(".timer").hide();
+            $("#submit").hide();
+            $("#results").show();
+            quizResults();
         }
         $(".timer").html("Beat The Clock: " + number);
     }
