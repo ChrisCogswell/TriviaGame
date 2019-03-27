@@ -70,7 +70,7 @@ $(document).ready(function() {
     ];
     
     
-    var number = 10;
+    var number = 60;
     
     var intervalId;
     
